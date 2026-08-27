@@ -1,12 +1,13 @@
 import { FolderGit, Link as LinkIcon, Mail } from 'lucide-react';
 import { Link as RouterLink } from 'react-router-dom';
+import IdentityMark from './IdentityMark';
 
 export default function Footer() {
   return (
     <footer className="border-t border-ink/5 bg-sand px-5 py-16 dark:border-white/10 dark:bg-[#1c1815]">
       <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-4">
         <div>
-          <p className="text-xl font-black">DEVCONNECT AI</p>
+          <p className="flex items-center gap-2 text-xl font-black"><IdentityMark size="sm" /> DEVCONNECT AI</p>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-ink/60 dark:text-cream/60">
             A college hiring ecosystem that connects student talent with opportunity.
           </p>

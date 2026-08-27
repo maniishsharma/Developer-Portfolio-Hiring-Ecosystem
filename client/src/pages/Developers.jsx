@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import api from '../services/api';
 import { fadeUp, stagger } from '../animations/variants';
+import IdentityMark from '../components/IdentityMark';
 import Skeleton from '../components/Skeleton';
 
 export default function Developers() {
@@ -42,6 +43,7 @@ export default function Developers() {
         <motion.div initial="hidden" animate="show" variants={stagger} className="mt-8 grid gap-5 md:grid-cols-3">
           {data.items.map((d) => (
             <motion.article key={d._id} variants={fadeUp} className="glass-card rounded-[28px] p-6">
+              <IdentityMark size="lg" />
               <h3 className="text-xl font-black">{d.user?.name}</h3>
               <p className="text-sm text-ink/50">{d.headline}</p>
               <div className="mt-3 flex flex-wrap gap-2">

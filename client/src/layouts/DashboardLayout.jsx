@@ -22,6 +22,7 @@ import { useState, useEffect } from 'react';
 import { logout } from '../redux/authSlice';
 import { toggleDark } from '../redux/uiSlice';
 import api from '../services/api';
+import IdentityMark from '../components/IdentityMark';
 
 const studentLinks = [
   { to: '/student', label: 'Overview', icon: LayoutDashboard, end: true },
@@ -73,7 +74,7 @@ export default function DashboardLayout({ role }) {
           open ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
         }`}
       >
-        <p className="text-sm font-black tracking-tight">DEVCONNECT AI</p>
+        <p className="flex items-center gap-2 text-sm font-black tracking-tight"><IdentityMark role={role} size="sm" /> DEVCONNECT AI</p>
         <p className="mt-1 text-xs text-ink/50 dark:text-cream/50">{role === 'employer' ? 'Employer workspace' : 'Student workspace'}</p>
         <nav className="mt-8 space-y-1">
           {links.map((l) => (

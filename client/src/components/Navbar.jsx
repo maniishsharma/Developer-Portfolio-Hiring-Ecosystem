@@ -3,6 +3,7 @@ import { Moon, Sun } from 'lucide-react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleDark } from '../redux/uiSlice';
 import { logout } from '../redux/authSlice';
+import IdentityMark from './IdentityMark';
 
 const links = [
   { to: '/', label: 'Home' },
@@ -21,8 +22,9 @@ export default function Navbar() {
   return (
     <header className="glass-nav fixed top-0 z-50 h-20 w-full">
       <div className="mx-auto flex h-full max-w-6xl items-center justify-between px-5">
-        <Link to="/" className="text-lg font-black tracking-tight">
-          DEVCONNECT AI
+        <Link to="/" className="flex items-center gap-2 text-lg font-black tracking-tight">
+          <IdentityMark size="sm" />
+          <span>DEVCONNECT AI</span>
         </Link>
         <nav className="hidden items-center gap-8 text-sm font-semibold md:flex">
           {links.map((l) => (

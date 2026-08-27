@@ -3,7 +3,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-sans: "League Spartan", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
   --color-cream: #fdf8f3;
   --color-sand: #f5f0eb;
   --color-blush: #e4a4bd;
@@ -20,8 +20,8 @@ body {
   margin: 0;
   background: #fdf8f3;
   color: #262626;
-  font-family: "League Spartan", sans-serif;
-  letter-spacing: -0.02em;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  letter-spacing: 0;
 }
 
 .dark body,
@@ -34,7 +34,67 @@ h1,
 h2,
 h3 {
   font-weight: 800;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.03em;
+}
+
+.identity-mark {
+  display: inline-grid;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid;
+  box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.42);
+}
+
+.identity-mark svg {
+  width: 52%;
+  height: 52%;
+  stroke-width: 2.2;
+}
+
+.identity-mark-sm {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.7rem;
+}
+
+.identity-mark-md {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 1rem;
+}
+
+.identity-mark-lg {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 1.15rem;
+}
+
+.identity-mark-student {
+  color: #176b68;
+  border-color: #8bc8bf;
+  background: linear-gradient(145deg, #d7f0e8, #a9d9d0);
+}
+
+.identity-mark-employer {
+  color: #8b4a17;
+  border-color: #e6b46d;
+  background: linear-gradient(145deg, #ffedc9, #f4c581);
+}
+
+.dark .identity-mark {
+  box-shadow: inset 0 0 0 5px rgba(22, 19, 17, 0.35);
+}
+
+.dark .identity-mark-student {
+  color: #a9e1d6;
+  border-color: #397f78;
+  background: #1e4f4b;
+}
+
+.dark .identity-mark-employer {
+  color: #ffd392;
+  border-color: #9a6528;
+  background: #68441f;
 }
 
 .glass-nav {

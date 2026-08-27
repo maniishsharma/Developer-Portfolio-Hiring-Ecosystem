@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { fadeUp, stagger } from '../animations/variants';
+import IdentityMark from '../components/IdentityMark';
 import api from '../services/api';
 
 function Counter({ to }) {
@@ -56,7 +57,7 @@ export default function Home() {
         <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }} className="relative">
           <div className="glass-card relative overflow-hidden rounded-[40px] p-8">
             <div className="mb-6 flex items-center gap-3">
-              <div className="h-12 w-12 rounded-2xl bg-blush" />
+              <IdentityMark size="md" />
               <div>
                 <p className="font-bold">Aarav · MERN Developer</p>
                 <p className="text-sm text-ink/50 dark:text-cream/50">Ready for internships</p>
@@ -109,7 +110,7 @@ export default function Home() {
         <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger} className="grid gap-6 md:grid-cols-3">
           {(devs.length ? devs : [{ _id: '1', user: { name: 'Sample Dev' }, skills: ['React'], headline: 'Student' }]).map((d, i) => (
             <motion.article key={d._id} variants={fadeUp} className="glass-card rounded-[32px] p-6" style={{ marginTop: i * 12 }}>
-              <div className="mb-4 h-14 w-14 rounded-full bg-blush" />
+              <IdentityMark size="lg" className="mb-4" />
               <h3 className="text-xl font-black">{d.user?.name}</h3>
               <p className="text-sm text-ink/50 dark:text-cream/50">{d.headline}</p>
               <div className="mt-4 flex flex-wrap gap-2">
