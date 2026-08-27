@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "League Spartan", ui-sans-serif, system-ui, sans-serif;
+  --color-cream: #fdf8f3;
+  --color-sand: #f5f0eb;
+  --color-blush: #e4a4bd;
+  --color-ink: #262626;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #fdf8f3;
+  color: #262626;
+  font-family: "League Spartan", sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.dark body,
+.dark {
+  background: #161311;
+  color: #f6efe8;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 800;
+  letter-spacing: -0.05em;
+}
+
+.glass-nav {
+  background: rgba(253, 248, 243, 0.8);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(38, 38, 38, 0.06);
+}
+
+.dark .glass-nav {
+  background: rgba(22, 19, 17, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(38, 38, 38, 0.06);
+  box-shadow: 0 20px 50px rgba(38, 38, 38, 0.04);
+}
+
+.dark .glass-card {
+  background: rgba(40, 34, 30, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.btn-primary {
+  background: #e4a4bd;
+  color: #262626;
+  font-weight: 700;
+  border-radius: 999px;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(228, 164, 189, 0.45);
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+}
